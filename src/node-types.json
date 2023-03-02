@@ -3232,16 +3232,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "asterisk",
-          "named": true
-        }
-      ]
     }
   },
   {

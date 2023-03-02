@@ -785,7 +785,6 @@ module.exports = grammar({
       field('scope', $._name),
       '.',
       field('member', $.identifier),
-      $.asterisk,
       ';'
     ),
 

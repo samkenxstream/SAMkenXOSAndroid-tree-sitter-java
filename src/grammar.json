@@ -5002,10 +5002,6 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "asterisk"
-        },
-        {
           "type": "STRING",
           "value": ";"
         }
