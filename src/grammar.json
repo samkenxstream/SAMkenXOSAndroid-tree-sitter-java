@@ -4915,8 +4915,12 @@
           "value": "package"
         },
         {
-          "type": "SYMBOL",
-          "name": "_name"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_name"
+          }
         },
         {
           "type": "STRING",
