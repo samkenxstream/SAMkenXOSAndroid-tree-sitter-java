@@ -1,5 +1,33 @@
 ; Methods
 
+(package_declaration
+  (scoped_identifier) @package)
+
+; import package.name.Type;
+(single_type_import
+  (scoped_identifier
+    scope: (_) @package
+    name: (_) @type))
+
+; import package.name.*;
+(type_import_on_demand
+  (scoped_identifier) @package
+  (asterisk) @constant)
+
+; import package.name.Type.MEMBER;
+(single_static_import
+  (scoped_identifier
+    scope: (_) @package
+    name: (_) @type)
+  (identifier) @constant .)
+
+; import static package.name.Type.*;
+(static_import_on_demand
+  (scoped_identifier
+    scope: (_) @package
+    name: (_) @type)
+  (asterisk) @constant)
+
 (method_declaration
   name: (identifier) @function.method)
 (method_invocation
