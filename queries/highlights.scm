@@ -1,32 +1,32 @@
 ; Methods
 
 (package_declaration
-  name: (_) @package)
+  name: (_) @qualified_name)
 
 ; import package.name.Type;
 (single_type_import
   (scoped_identifier
-    scope: (_) @package
+    scope: (_) @qualified_name
     name: (_) @type))
 
 ; import package.name.*;
 (type_import_on_demand
-  (scoped_identifier) @package
-  (asterisk) @constant)
+  (scoped_identifier) @qualified_name
+  (asterisk) @imported_member)
 
 ; import package.name.Type.MEMBER;
 (single_static_import
   (scoped_identifier
-    scope: (_) @package
+    scope: (_) @qualified_name
     name: (_) @type)
-  (identifier) @constant .)
+  (identifier) @imported_member .)
 
 ; import static package.name.Type.*;
 (static_import_on_demand
   (scoped_identifier
-    scope: (_) @package
+    scope: (_) @qualified_name
     name: (_) @type)
-  (asterisk) @constant)
+  (asterisk) @imported_member)
 
 (method_declaration
   name: (identifier) @function.method)
