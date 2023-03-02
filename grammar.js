@@ -760,11 +760,43 @@ module.exports = grammar({
       ';'
     ),
 
-    import_declaration: $ => seq(
+    import_declaration: $ => choice(
+      $.single_type_import,
+      $.type_import_on_demand,
+      $.single_static_import,
+      $.static_import_on_demand
+    ),
+
+    single_type_import: $ => seq(
       'import',
-      optional('static'),
       $._name,
-      optional(seq('.', $.asterisk)),
+      ';'
+    ),
+
+    type_import_on_demand: $ => seq(
+      'import',
+      $._name,
+      '.',
+      $.asterisk,
+      ';'
+    ),
+
+    single_static_import: $ => seq(
+      'import',
+      'static',
+      field('scope', $._name),
+      '.',
+      field('member', $.identifier),
+      $.asterisk,
+      ';'
+    ),
+
+    static_import_on_demand: $ => seq(
+      'import',
+      'static',
+      field('type_name', $._name),
+      '.',
+      $.asterisk,
       ';'
     ),
 

@@ -2180,19 +2180,23 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "asterisk",
+          "type": "single_static_import",
           "named": true
         },
         {
-          "type": "identifier",
+          "type": "single_type_import",
           "named": true
         },
         {
-          "type": "scoped_identifier",
+          "type": "static_import_on_demand",
+          "named": true
+        },
+        {
+          "type": "type_import_on_demand",
           "named": true
         }
       ]
@@ -3216,6 +3220,65 @@
     }
   },
   {
+    "type": "single_static_import",
+    "named": true,
+    "fields": {
+      "member": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "scope": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "asterisk",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "single_type_import",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "scoped_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "spread_parameter",
     "named": true,
     "fields": {},
@@ -3233,6 +3296,36 @@
         },
         {
           "type": "variable_declarator",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "static_import_on_demand",
+    "named": true,
+    "fields": {
+      "type_name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "asterisk",
           "named": true
         }
       ]
@@ -3603,6 +3696,29 @@
       "types": [
         {
           "type": "_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type_import_on_demand",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "asterisk",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "scoped_identifier",
           "named": true
         }
       ]
