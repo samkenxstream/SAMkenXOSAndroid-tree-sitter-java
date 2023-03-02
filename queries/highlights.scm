@@ -1,7 +1,7 @@
 ; Methods
 
 (package_declaration
-  (scoped_identifier) @package)
+  name: (_) @package)
 
 ; import package.name.Type;
 (single_type_import

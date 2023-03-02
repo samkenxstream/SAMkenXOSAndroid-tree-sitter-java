@@ -2800,25 +2800,32 @@
   {
     "type": "package_declaration",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "scoped_identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "annotation",
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "marker_annotation",
-          "named": true
-        },
-        {
-          "type": "scoped_identifier",
           "named": true
         }
       ]

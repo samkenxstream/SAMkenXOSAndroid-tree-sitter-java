@@ -754,7 +754,7 @@ module.exports = grammar({
     package_declaration: $ => seq(
       repeat($._annotation),
       'package',
-      $._name,
+      field('name', $._name),
       ';'
     ),
 
