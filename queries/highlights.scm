@@ -55,7 +55,8 @@
   name: (identifier) @type)
 
 ((field_access
-  object: (identifier) @type)
+  object: (identifier) @type
+  field: (_) @constant)
  (#match? @type "^[A-Z]"))
 ((scoped_identifier
   scope: (identifier) @type)
