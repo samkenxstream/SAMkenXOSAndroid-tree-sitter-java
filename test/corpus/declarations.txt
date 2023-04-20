@@ -240,7 +240,8 @@ import java.util.Vector;
 ---
 
 (program (import_declaration
-  (scoped_identifier (scoped_identifier (identifier) (identifier)) (identifier))))
+  (single_type_import
+    (scoped_identifier (scoped_identifier (identifier) (identifier)) (identifier)))))
 
 ===========================
 type_import_on_declaraction
@@ -251,7 +252,8 @@ import java.util.*;
 ---
 
 (program (import_declaration
-  (scoped_identifier (identifier) (identifier)) (asterisk)))
+  (type_import_on_demand
+    (scoped_identifier (identifier) (identifier)) (asterisk))))
 
 =================================
 single static import declaration
@@ -262,7 +264,7 @@ import static java.util.Vector;
 ---
 
 (program (import_declaration
-  (scoped_identifier
+  (single_static_import
     (scoped_identifier (identifier) (identifier))
     (identifier))))
 
@@ -275,8 +277,9 @@ import static java.util.*;
 ---
 
 (program (import_declaration
-  (scoped_identifier (identifier) (identifier))
-  (asterisk)))
+  (static_import_on_demand
+    (scoped_identifier (identifier) (identifier))
+    (asterisk))))
 
 =================
 class declaration
